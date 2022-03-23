@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Calculos {
+	public final static int OPCION_MENU_SALIR=6;
+	public final static int OPCION_MENU_VER_TICKET=5;
+	public final static int OPCION_MENU_ELIMINAR=4;
+	public final static int OPCION_MENU_INGRESAR_TICKET=3;
+	public final static int OPCION_MENU_VER_CLIENTE=2;
+	public final static int OPCION_MENU_INGRESO_CLIENTE=1;
+	 public static void main(String [] args){
+		 
+			int opcionSeleccionada;
+			do 
+			{
+				opcionSeleccionada=menu();
+				switch(opcionSeleccionada) 
+				{
+				case OPCION_MENU_INGRESO_CLIENTE:
+					break;
+				case OPCION_MENU_VER_CLIENTE:
+					break;
+				case OPCION_MENU_INGRESAR_TICKET:	
+					break;
+				case OPCION_MENU_VER_TICKET:
+					break;
+				case OPCION_MENU_ELIMINAR:
+					break;
+				}
+			}while(opcionSeleccionada !=OPCION_MENU_SALIR );
+			System.out.printf("Selecciono la opcion %d",opcionSeleccionada);
+
+         
+	        double base, altura, resultado;     
+	        Scanner obj = new Scanner(System.in);
+	         
+	        System.out.print("Ingrese base:\t");
+	        base = obj.nextDouble();
+	         
+	        System.out.print("Ingrese altura:\t");
+	        altura = obj.nextDouble();
+	         
+	        resultado = (base*altura);
+	         
+	        System.out.print("El area del Rectangulo es:\t"+resultado);
+
+	 }
+	 private static int menu() 
+		{
+			System.out.println("MENU DATOS SERVICIO\n================\n");
+			System.out.println("1. INGRESAR USUARIO");
+			System.out.println("2. VER USUARIO");
+			System.out.println("3. INGRESAR TICKET");
+			System.out.println("5. VER TICKET");
+			System.out.println("4. ELIMINAR USUARIO");
+			System.out.println("5. SALIR");
+
+			System.out.println("\nPOR FAVOR INGRESE DATOS");
+			
+			Scanner scanner = new Scanner(System.in);
+			int opcionseleccionada = scanner.nextInt();
+
+			return opcionseleccionada;
+		}
+}

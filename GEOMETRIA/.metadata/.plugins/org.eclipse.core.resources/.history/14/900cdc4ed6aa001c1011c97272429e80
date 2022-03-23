@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class Calculos {
+	public final static int OPCION_MENU_SALIR=4;
+	public final static int OPCION_CALCULO_PERIMETRO_CIRCULO=3;
+	public final static int OPCION_CALCULO_RADIO_CIRCULO=2;
+	public final static int OPCION_CALCULO_AREA=1;
+
+    private static Scanner sc;
+	 public static void main(String [] args){
+		 
+			int opcionSeleccionada;
+			do 
+			{
+				opcionSeleccionada=menu();
+				switch(opcionSeleccionada) 
+				{
+				case OPCION_CALCULO_AREA:
+					areaRectangulo();
+					break;
+				case OPCION_CALCULO_RADIO_CIRCULO:
+					radioCirculo();
+					break;
+				case OPCION_CALCULO_PERIMETRO_CIRCULO:
+					perimetroCirculo();
+					break;
+				case OPCION_MENU_SALIR:
+					break;
+				}
+			}while(opcionSeleccionada !=OPCION_MENU_SALIR );
+			
+			System.out.printf("Selecciono la opcion %d",opcionSeleccionada);
+
+	 }
+	 
+	 private static void areaRectangulo() 
+	 {
+		 double base, altura, resultado;     
+	        Scanner obj = new Scanner(System.in);
+	         
+	        System.out.print("Ingrese base:\t");
+	        base = obj.nextDouble();
+	         
+	        System.out.print("Ingrese altura:\t");
+	        altura = obj.nextDouble();
+	         
+	        resultado = (base*altura);
+	         
+	        System.out.print("El area del Rectangulo es:\t"+resultado);
+	 }
+	 private static void radioCirculo() 
+	 {
+		 double diametro, radio, resultado;     
+	        Scanner obj = new Scanner(System.in);
+	         
+	        System.out.print("Ingrese Diametro:\t");
+	        diametro = obj.nextDouble();
+	         
+	        resultado = (diametro/2);
+	         
+	        System.out.print("El radio del Circulo es:\t"+resultado);
+	 }
+	 private static void perimetroCirculo() 
+	 {
+		 
+		   double radio = leerNumero("Introduce el radio del circulo: ");
+	        double area, perimetro;
+	        perimetro = 2 * Math.PI * radio;
+	        area = Math.PI * Math.pow(radio, 2);
+	        System.out.printf("\nEl perímetro del circulo de radio %.2f es %.2f.", radio, perimetro);
+	        System.out.printf("\nEl área del circulo de radio %.2f es %.2f.", radio, area);
+	    }
+	 private static double leerNumero(String s){
+		 
+	        sc = new Scanner(System.in);
+	        System.out.print(s);
+	        return sc.nextDouble();
+	    }
+	  
+	   
+	 private static int menu() 
+		{
+		    System.out.println("\n\n=====================");
+			System.out.println("MENU DATOS SERVICIO\n=====================\n");
+			System.out.println("1. CALCULAR AREA RECTANGULO");
+			System.out.println("2. CALCULAR RADIO DE UN CIRCULO A PARTIR DEL DIAMETRO");
+			System.out.println("3. CALCULAR PERIMETRO DEL CIRCULO");
+			System.out.println("4. SALIR");
+
+			System.out.println("\nPOR FAVOR INGRESE DATOS");
+			
+			Scanner scanner = new Scanner(System.in);
+			int opcionseleccionada = scanner.nextInt();
+
+			return opcionseleccionada;
+		}
+}

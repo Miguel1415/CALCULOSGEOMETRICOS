@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class Calculos {
+	public final static int OPCION_MENU_SALIR=5;
+	public final static int OPCION_CALCULO_AREA_CIRCULO=4;
+	public final static int OPCION_CALCULO_PERIMETRO=3;
+	public final static int OPCION_CALCULO_RADIO_CIRCULO=2;
+	public final static int OPCION_CALCULO_AREA=1;
+	 public static void main(String [] args){
+		 
+			int opcionSeleccionada;
+			do 
+			{
+				opcionSeleccionada=menu();
+				switch(opcionSeleccionada) 
+				{
+				case OPCION_CALCULO_AREA:
+					calculoPerimetro();
+					break;
+				case OPCION_CALCULO_RADIO_CIRCULO:
+					break;
+				case OPCION_CALCULO_PERIMETRO:
+					break;
+				case OPCION_CALCULO_AREA_CIRCULO:
+					break;
+				case OPCION_MENU_SALIR:
+					break;
+				}
+			}while(opcionSeleccionada !=OPCION_MENU_SALIR );
+			
+			System.out.printf("Selecciono la opcion %d",opcionSeleccionada);
+
+         
+	       
+
+	 }
+	 
+	 private static void calculoPerimetro() 
+	 {
+		 double base, altura, resultado;     
+	        Scanner obj = new Scanner(System.in);
+	         
+	        System.out.print("Ingrese base:\t");
+	        base = obj.nextDouble();
+	         
+	        System.out.print("Ingrese altura:\t");
+	        altura = obj.nextDouble();
+	         
+	        resultado = (base*altura);
+	         
+	        System.out.print("El area del Rectangulo es:\t"+resultado);
+	 }
+	 private static int menu() 
+		{
+			System.out.println("MENU DATOS SERVICIO\n================\n");
+			System.out.println("1.  CALCULAR AREA RECTANGULO");
+			System.out.println("2. CALCULAR RADIO DE UN CIRCULO A PARTID DEL DIAMETRO");
+			System.out.println("3. CALCULAR PERIMETRO DEL CIRCULO");
+			System.out.println("4. CALCULAR AREA DE UN CIRCULO");
+			System.out.println("5. SALIR");
+
+			System.out.println("\nPOR FAVOR INGRESE DATOS");
+			
+			Scanner scanner = new Scanner(System.in);
+			int opcionseleccionada = scanner.nextInt();
+
+			return opcionseleccionada;
+		}
+}
